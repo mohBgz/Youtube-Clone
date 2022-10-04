@@ -1,0 +1,184 @@
+/*main video grid*/
+.videos-container{ /*conatins multiple <section> --- every sections is devided into 2 divs */
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  column-gap:20px;
+  row-gap:40px;
+}
+
+
+/*----------1st--div--components--style---STRAT-------------------*/
+
+
+
+/** the 1st main container --1st <div> ---"thumbnail-div"*/
+.thumbnail-div{ 
+  /*it's a simple div that contains -> 
+                  1- the <img> wraped in <a> 
+                  2- the video-time <div> */
+  margin-bottom:10px;
+  width:100%;
+  position: relative;
+}
+
+.video_thumbnail{ /* this is an <img> */
+  width: 100%;
+}
+
+.video-time{ /*video time <div> STYLED */
+  position: absolute;
+  right: 5px;
+  bottom:10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px;
+  border: none;
+  border-radius: 2px;
+}
+/*------------------------1st--div--components--style---end--------------------*/
+
+/*---------2nd--div--components--style---START---------------------------*/
+
+
+
+/** the 2nd main container-- 2nd <div> ---*/
+
+/*_______________________* its a GRID of 2 columns *_______*/
+
+.video_info-div{/*it contains -> 
+  1- the author-pic-div <div> 
+  2- and a second div that contains 
+       --> video title
+       --> video author "his name"
+       --> video Stats "( viwes & ... )"
+*/
+  display:grid;
+  grid-template-columns:40px 1fr;
+  column-gap:10px;
+  width:100%;
+}
+
+/*-----------------*/   /****FISRT COLUMN***(simple div)*/
+.author-pic-div {
+  position: relative;
+  height: fit-content;
+}
+/*---------------------*/
+
+
+/******************************************************/  /***SECOND COLUMN**(simple div)**/
+.video_title{
+  font-weight:500;
+  font-size: 14px;
+  line-height:20px;
+  margin-bottom:10px;
+ 
+}
+.video_author,
+.video_stats{
+  color:rgb(96,96,96);
+  font-size:12.5px;
+}
+
+.video_author{
+  margin-bottom:5px;
+}
+/*****************************************/
+
+/*----author's pic STYLE----*/
+.author_pic{
+  border-radius:40px;
+  width: 38px;
+  object-fit: cover;
+}
+.author_pic:hover{
+  opacity: 0.9;
+}
+/*----------------------*/
+
+/*******************************---------TOOLTIP STUFF--------------********************/
+.tooltip{ /* it is a flexbox with 2 columns */
+  background-color: white;
+  position: absolute;
+  bottom: -100px;
+  left: 0px;
+  z-index: 300;
+  display:flex;
+  width: 230px;
+  align-items:center;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms;
+}
+
+/* for now the tooltip is invisible */
+.author-pic-div:hover .tooltip{  /* this style will activate if we hover  over the author-pic-div */
+   /*targeting the tooltip inside the author-pic-div ,only if we hover over it */
+  opacity: 1;
+}
+/*----------------
+
+/*** remeber that the tooltip is a flexbox with 2 columns so ... 
+
+/**---1st Column --**/
+.tooltip .author-pic-container { /**the container **/
+  width:55px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+}
+
+.tooltip .author_pic{
+  width: 100%;
+  border-radius: 50% ;
+}
+
+/**---2nd Column --**/
+
+/** here, the container is a simple <div> with no style , contianing 2 divs 
+--> "video_author"
+---> "subscribers"
+**/
+.tooltip .video_author{
+  font-weight:bold;
+  color: black;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.toolip .subscribers{
+  color: rgb(100,100,100);
+  font-size: 15px ;
+}
+/************************************************TOOLTIP STUFF ---END ----**********************/
+/* responsive design*/
+@media (min-width:1000px ){
+ 
+  .video_author,.video_stats{
+    font-size:14px;
+  }
+  .video_title{
+    font-size: 16px;
+    line-height: 24px;
+    
+  }
+  .videos-container{
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  }
+ 
+}
+
+@media (max-width:653px ) {
+  .videos-container{
+  grid-template-columns:1fr 1fr ;
+    
+  }
+}
+
+
+

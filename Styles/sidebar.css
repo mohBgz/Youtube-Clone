@@ -1,0 +1,97 @@
+/***___ responnsive- -design___***/
+
+@media (max-width:1200px){
+    
+    nav{ /*navigation bar*/ /*it contains multiple divs(sidebar-link <-->containers of icon+ name of it ) */
+        position: fixed;
+        left:0;
+        bottom:0;
+        width:90px;
+        background-color: white;
+        top:55px;
+        color:rgb(255,255,255);
+        z-index: 200;
+        padding-top:10px;
+    }
+
+    .sidebar-link{ /*containers of 
+    /*1-icon(img)
+    2- name of it(div) 
+        example Home icon + the name "Home"
+        2columns --> flex direction : column /vertical\
+    */
+        height:73px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .sidebar-link:hover{
+      background-color: rgb(234, 234, 234);
+  
+    }
+
+    /*targiting the imgs inisde the sidebar-link*/
+    .sidebar-link img{
+        height:25px;
+    }
+
+    /*targiting the divs inisde the sidebar-link*/
+    .sidebar-link div{
+        color: black;
+        font-size: 10px;
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 1200.1px){
+    nav{ /*navigation bar*/ /*it contains multiple divs(sidebar-link <-->containers of icon+ name of it ) */
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left:0;
+        bottom:0;
+        width:224px;
+        background-color: white;
+        top:55px;
+        color:rgb(255,255,255);
+        z-index: 200;
+        padding-top:10px;
+    }
+    
+    .sidebar-link{ /*containers of 
+    /*1-icon(img)
+    2- name of it(div) 
+        example Home icon + the name "Home"
+        2columns --> flex direction : column /vertical\
+    */
+        height:73px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        cursor: pointer;
+    }
+    .sidebar-link:hover{
+        background-color: rgb(234, 234, 234);
+    
+    }
+
+    /*targiting the imgs inisde the sidebar-link*/
+    .sidebar-link img{
+        height:28px;
+        padding-left: 20px;
+    }
+
+    /*targiting the divs inisde the sidebar-link*/
+    .sidebar-link div{
+        color: black;
+        font-size: 12px;
+        margin-top: 8px;
+        margin-left: 20px;
+        
+    }
+}
+
+/***___ responnsive- -design___***/
